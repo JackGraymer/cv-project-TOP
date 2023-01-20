@@ -15,7 +15,7 @@ class Data extends React.Component {
         }
     }
 
-    updateData = (e) => {
+    /* updateData = (e) => {
         let illo = e.target.id.toLowerCase()
         let illa = e.target.value
         this.setState({
@@ -23,18 +23,34 @@ class Data extends React.Component {
         })
     }
 
+     */
+    
+
     dataFields () {
             return Object.keys(this.state).map((obj, i) => {
-                return(                    
+                if(i>2){
+                return(
+                    
                         <input id={obj} key={i} type='text' placeholder={obj[0].toUpperCase() + obj.slice(1)}
                         onChange={this.updateData} ></input>
-                )
+                        )
+            }
             })
         }        
 
     render(){
         return(
-            <div>
+            <div className="data">
+                <div className="top">
+                    <input type='text' placeholder='Name'></input>
+                    <input type='text' placeholder='Surname'></input>
+                </div>
+                <div className='subtitle'> 
+                    <input type='text' placeholder='Position'></input>
+                </div>
+                <div>
+
+                </div>
                 {this.dataFields()}
             </div>
         )

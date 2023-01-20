@@ -2,16 +2,45 @@
 
 input {
   outline: none;
-  /* border: none;
-  background-color: transparent; */
-  font-size: larger;
+  font-size: large;
   padding: 0.1em;
   margin:0.1em;
+  border: none;
 }
 
+.preview{
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.data{
+}
+
+/* #name{
+  grid-area: a;
+}
+#surname{
+  grid-area: b;
+}
+#position{
+  grid-area: c;
+}
+#city{
+  grid-area: d;
+}
+#phone{
+  grid-area: e;
+}
+#email{
+  grid-area: f;
+} */
+
 .body {
-    height: 100vh;
-    width: clamp(800px, 80%, 1280px);
-    background-color: #ffffffe1;
+  height: 100vh;
+  width: clamp(800px, 80%, 1280px);
+  background-color: #ffffffe1;
+  /* display: flex;
+  justify-self: center;
+  align-items: center; */
   }
 
