@@ -1,6 +1,7 @@
 import React from "react";
 import './components.css'
 import Data from "./data";
+import Studies from "./studies";
 
 class Body extends React.Component {
     constructor(props){
@@ -19,7 +20,7 @@ class Body extends React.Component {
         return(
             <div className="body">
                 <Data />
-
+                <Studies />
 
 
                 <button onClick={this.overview}> Overview</button>
