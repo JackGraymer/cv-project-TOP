@@ -2,6 +2,8 @@ import React from "react";
 import './components.css'
 import Data from "./data";
 import Studies from "./studies";
+import Work from "./work";
+
 
 class Body extends React.Component {
     constructor(props){
@@ -21,7 +23,7 @@ class Body extends React.Component {
             <div className="body">
                 <Data />
                 <Studies />
-
+                <Work />
 
                 <button onClick={this.overview}> Overview</button>
             </div>

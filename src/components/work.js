@@ -2,16 +2,17 @@ import React from "react";
 import './components.css'
 import { useState } from "react";
 
-class Studies extends React.Component {
+class Work extends React.Component {
     constructor(props){
         super(props)
         this.state={study: [
             {
-                title: '',
-                university:'',
+                role: '',
+                company:'',
                 place: '',
                 from: '',
                 to: '',
+                duty:'',
                 id: crypto.randomUUID()
             }, 
         ]}
@@ -47,7 +48,7 @@ class Studies extends React.Component {
                     <div id={obj.id} key={i}>
                         {Object.entries(obj).map((obj,i) => 
                                                
-                            {if(i<5){
+                            {if(i<6){
                                return (
                                     <input key={i} placeholder={obj[0][0].toUpperCase() + obj[0].slice(1)} className={obj[0] + ' study'} value={obj[1]} onChange={this.updateStudies}></input>
                                 )
@@ -63,11 +64,11 @@ class Studies extends React.Component {
     render = () =>{
         return(
             <div className="Studies">
-                <h5>Studies</h5>
+                <h5>Experience</h5>
                 <div>
                     {this.studies()}
                 </div>
-                <button onClick={this.addStudies}> Add Studies </button>
+                <button onClick={this.addStudies}> Add Experience </button>
             </div>
             
         )
@@ -78,4 +79,4 @@ class Studies extends React.Component {
 
 
 
-export default Studies
+export default Work
