@@ -29,7 +29,7 @@ class Studies extends React.Component {
             this.setState({
                 study: newState
             })
-        }   
+        }
     }
 
     updateStudies = (e, id) => {
@@ -45,14 +45,15 @@ class Studies extends React.Component {
             return(
                 this.state.study.map((obj,i)=> (
                     <div id={obj.id} key={i}>
-                        
-                        {Object.entries(obj).map((obj,i) => (
-                            
-                            
-                        <input key={i} placeholder={obj[0][0].toUpperCase() + obj[0].slice(1)} className={obj[0] + ' study'} value={obj[1]} onChange={this.updateStudies}></input>
-                        
-                        
-                       ))}
+                        {Object.entries(obj).map((obj,i) => 
+                                               
+                            {if(i<5){
+                               return (
+                                    <input key={i} placeholder={obj[0][0].toUpperCase() + obj[0].slice(1)} className={obj[0] + ' study'} value={obj[1]} onChange={this.updateStudies}></input>
+                                )
+                                }
+                            }    
+                        )}
                        <button className="del btn" onClick={this.deleteStudies}>Delete</button>
                     </div>
                 ))             
