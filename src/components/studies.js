@@ -5,45 +5,43 @@ import { useState } from "react";
 class Studies extends React.Component {
     constructor(props){
         super(props)
-        this.state={
-            study: {
+        this.state={study: [
+            {
                 title:null,
                 university:null,
                 place: null,
                 from: null,
                 to: null,
-            }
-            
-        }
+                id: crypto.randomUUID()
+            }, 
+        ]}
     }
-
 
     addStudies = () => {
-        this.setState({
-            [Object.keys(this.state).length] : this.state.study
-        })
+        this.setState(prevState => ({
+            study: [...prevState.study, {...this.state.study[0], id: crypto.randomUUID()}]
+          }))
     }
 
-    deleteStudies = () =>{
-        console.log(this.state)
+    deleteStudies = (e) =>{
+        console.log(e.target.parentNode.children)
+        console.log(this.state.study)
+        //this.setState({study.slice(0)})
     }
 
     studies = () => {
-        console.log(Object.keys(this.state).length)
-        console.log(this.state)
             return(
-                Object.keys(this.state).map((obj,i) => (
-                    <div key={i}>
-                {Object.keys(this.state.study).map((obj,i) => (
-                    <input key={i} placeholder={obj[0].toUpperCase() + obj.slice(1)}></input>
-                    //{console.log(obj)}
-                   ))}
-                   <button className="del btn" onClick={this.deleteStudies}>delete</button>
-                </div> 
-                ))
-                
-            )
-        
+                this.state.study.map((obj,i)=> (
+                    <div id={obj.id} key={i}>
+                        {Object.keys(obj).map((obj,i) => (
+                        
+                        <input key={i} placeholder={obj[0].toUpperCase() + obj.slice(1)} className="study"></input>
+                        
+                       ))}
+                       <button className="del btn" onClick={this.deleteStudies}>Delete</button>
+                    </div>
+                ))             
+            )            
     }
 
     render = () =>{
