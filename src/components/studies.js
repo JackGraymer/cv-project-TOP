@@ -29,12 +29,16 @@ class Studies extends React.Component {
             this.setState({
                 study: newState
             })
-        }console.log(this.state.study)
-        
+        }   
     }
 
-    updateStudies = (e) => {
-        console.log(this.state.study)
+    updateStudies = (e, id) => {
+        this.setState({
+            ...this.state,
+            study: this.state.study.map((input) => 
+                e.target.parentNode.id === input.id? {...input, [e.target.classList[0]] : e.target.value}: input
+            )
+        })
     }
 
     studies = () => {
@@ -45,7 +49,7 @@ class Studies extends React.Component {
                         {Object.entries(obj).map((obj,i) => (
                             
                             
-                        <input key={i} placeholder={obj[0][0].toUpperCase() + obj[0].slice(1)} className="study" defaultValue={obj[1]} onChange={this.updateStudies}></input>
+                        <input key={i} placeholder={obj[0][0].toUpperCase() + obj[0].slice(1)} className={obj[0] + ' study'} value={obj[1]} onChange={this.updateStudies}></input>
                         
                         
                        ))}
