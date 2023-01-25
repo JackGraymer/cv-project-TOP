@@ -7,11 +7,11 @@ class Studies extends React.Component {
         super(props)
         this.state={study: [
             {
-                title:null,
-                university:null,
-                place: null,
-                from: null,
-                to: null,
+                title: '',
+                university:'',
+                place: '',
+                from: '',
+                to: '',
                 id: crypto.randomUUID()
             }, 
         ]}
@@ -19,23 +19,34 @@ class Studies extends React.Component {
 
     addStudies = () => {
         this.setState(prevState => ({
-            study: [...prevState.study, {...this.state.study[0], id: crypto.randomUUID()}]
+            study: [...prevState.study, {...this.state.study[0],title: '',university:'', place: '', from: '', to: '' ,id: crypto.randomUUID()}, ]
           }))
     }
 
-    deleteStudies = (e) =>{
-        console.log(e.target.parentNode.children)
+    deleteStudies = (e) => {
+        if(this.state.study.length >1){
+            let newState = this.state.study.filter(a => a.id !== e.target.parentNode.id)
+            this.setState({
+                study: newState
+            })
+        }console.log(this.state.study)
+        
+    }
+
+    updateStudies = (e) => {
         console.log(this.state.study)
-        //this.setState({study.slice(0)})
     }
 
     studies = () => {
             return(
                 this.state.study.map((obj,i)=> (
                     <div id={obj.id} key={i}>
-                        {Object.keys(obj).map((obj,i) => (
                         
-                        <input key={i} placeholder={obj[0].toUpperCase() + obj.slice(1)} className="study"></input>
+                        {Object.entries(obj).map((obj,i) => (
+                            
+                            
+                        <input key={i} placeholder={obj[0][0].toUpperCase() + obj[0].slice(1)} className="study" defaultValue={obj[1]} onChange={this.updateStudies}></input>
+                        
                         
                        ))}
                        <button className="del btn" onClick={this.deleteStudies}>Delete</button>
