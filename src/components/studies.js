@@ -54,7 +54,7 @@ class Studies extends React.Component {
                                 }
                             }    
                         )}
-                       <button className="del btn" onClick={this.deleteStudies}>Delete</button>
+                       <button className="del" onClick={this.deleteStudies}>Delete</button>
                     </div>
                 ))             
             )            
@@ -62,12 +62,12 @@ class Studies extends React.Component {
 
     render = () =>{
         return(
-            <div className="Studies">
+            <div className="studies container">
                 <h5>Studies</h5>
-                <div>
-                    {this.studies()}
-                </div>
-                <button onClick={this.addStudies}> Add Studies </button>
+                
+                {this.studies()}
+                
+                <button onClick={this.addStudies} className='add'> Add Studies </button>
             </div>
             
         )

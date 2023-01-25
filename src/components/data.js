@@ -40,7 +40,7 @@ class Data extends React.Component {
 
     render(){
         return(
-            <div className="data">
+            <div className="data container">
                 <div className="top">
                     <input type='text' placeholder='Name'></input>
                     <input type='text' placeholder='Surname'></input>
@@ -48,10 +48,10 @@ class Data extends React.Component {
                 <div className='subtitle'> 
                     <input type='text' placeholder='Position'></input>
                 </div>
-                <div>
-
+                <div className="details">
+                    {this.dataFields()}
                 </div>
-                {this.dataFields()}
+                
             </div>
         )
     }

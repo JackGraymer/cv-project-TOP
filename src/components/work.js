@@ -20,7 +20,7 @@ class Work extends React.Component {
 
     addStudies = () => {
         this.setState(prevState => ({
-            study: [...prevState.study, {...this.state.study[0],title: '',university:'', place: '', from: '', to: '' ,id: crypto.randomUUID()}, ]
+            study: [...prevState.study, {...this.state.study[0],role: '',company:'', place: '', from: '', to: '' , duty:'', id: crypto.randomUUID()}, ]
           }))
     }
 
@@ -50,12 +50,12 @@ class Work extends React.Component {
                                                
                             {if(i<6){
                                return (
-                                    <input key={i} placeholder={obj[0][0].toUpperCase() + obj[0].slice(1)} className={obj[0] + ' study'} value={obj[1]} onChange={this.updateStudies}></input>
+                                    <input type='text' key={i} placeholder={obj[0][0].toUpperCase() + obj[0].slice(1)} className={obj[0] + ' study'} value={obj[1]} onChange={this.updateStudies}></input>
                                 )
                                 }
                             }    
                         )}
-                       <button className="del btn" onClick={this.deleteStudies}>Delete</button>
+                       <button className="del" onClick={this.deleteStudies}>Delete</button>
                     </div>
                 ))             
             )            
@@ -63,12 +63,12 @@ class Work extends React.Component {
 
     render = () =>{
         return(
-            <div className="Studies">
+            <div className="experience container">
                 <h5>Experience</h5>
-                <div>
-                    {this.studies()}
-                </div>
-                <button onClick={this.addStudies}> Add Experience </button>
+                
+                {this.studies()}
+                
+                <button onClick={this.addStudies} className='add'> Add Experience </button>
             </div>
             
         )

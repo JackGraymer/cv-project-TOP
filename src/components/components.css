@@ -1,11 +1,43 @@
 /* //Body.js */
+html, .body, :root{
+  box-sizing: border-box;
+}
+
+.body>div>div>div, .body>div>div, .bodu>div{
+  padding: 1% 0%;
+}
+.body {
+  padding:0 1%;
+  height:100vh;
+  width: clamp(800px, 80%, 1280px);
+  background-color: #ffffffe1;
+  overflow: scroll;
+  /* display: flex;
+  justify-self: center;
+  align-items: center; */
+  }
 
 input {
+  width: 100%;
   outline: none;
   font-size: large;
   padding: 0.1em;
   margin:0.1em;
   border: none;
+  width:auto;
+  background-color: rgba(150, 150, 150, 0.247);
+}
+
+.overview{
+  display: block;
+  position: fixed;
+  bottom: 1%;
+  cursor: pointer;
+  background-color: rgba(38, 185, 38, 0.781);
+  color: black;
+  padding: 0.5em;
+  border-radius: 1em;
+  font-size: medium;
 }
 
 .preview{
@@ -13,34 +45,93 @@ input {
   pointer-events: none;
 }
 
+.btn{
+  display: none;
+}
+
+.container{
+  display: grid;
+}
+
 .data{
+  color: aliceblue;
+  display: grid;
+  background-color: rgb(38, 39, 39);
 }
 
-/* #name{
-  grid-area: a;
+.data>div{
+  width: 90%;
 }
-#surname{
-  grid-area: b;
-}
-#position{
-  grid-area: c;
-}
-#city{
-  grid-area: d;
-}
-#phone{
-  grid-area: e;
-}
-#email{
-  grid-area: f;
-} */
 
-.body {
-  height: 100vh;
-  width: clamp(800px, 80%, 1280px);
-  background-color: #ffffffe1;
-  /* display: flex;
+.top{
+  width: 100%;
+  display: grid;  
+  grid-template-columns:  1fr 1fr;
+}
+.top>input{
+  font-size: 1.1em;
+  font-weight: bolder;
+  color: rgb(204, 204, 204);
+}
+
+.subtitle, .subtitle>input{
+  display: grid;
+  font-size: 1em;
+  font-weight: bold;
+  color: rgb(204, 204, 204)
+}
+
+.details{
+  display: flex;
+  max-width: 100%;
+  flex-wrap:wrap-reverse;
+}
+
+.details>input{
+  max-width: 24%;
+  font-weight: bold;
+  color: rgb(204, 204, 204)
+}
+
+h5{
+  margin-bottom:0 ;
+  color: rgba(0, 0, 0, 0.692);
+  text-decoration: underline;
+}
+
+/* //Studies, Experience */
+
+.studies>div{
+  display: grid;
+  grid-template-columns: auto auto auto ;
+}
+
+.experience>div{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.add{
+  width: 15%;
+  padding: 0.5em;
+  background-color: rgba(0, 153, 255, 0.384);
+  border: none;
+  border-radius: 0.5em;
+  
+}
+.add:hover, .del:hover{
+  cursor: pointer;
+  outline: 2px solid rgba(43, 40, 40, 0.603);
+}
+
+.del{
+  width: 20%;
+  height: 2em;
   justify-self: center;
-  align-items: center; */
-  }
+  align-self: center;
+  background-color: rgba(219, 75, 75, 0.767);
+  border: none;
+  font-weight: bold;
+  border-radius: 0.5em;
+}
 

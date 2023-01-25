@@ -15,7 +15,11 @@ class Body extends React.Component {
         inputs.forEach(element => {
             element.classList.toggle('preview')
         })
-            
+        let buttons = document.querySelectorAll('button')
+        buttons.forEach(element =>
+            element.classList.toggle('btn'))
+            console.log(buttons)
+
     }
 
     render(){
@@ -24,8 +28,7 @@ class Body extends React.Component {
                 <Data />
                 <Studies />
                 <Work />
-
-                <button onClick={this.overview}> Overview</button>
+                <p className="overview" onClick={this.overview}> Overview</p>
             </div>
         )
     }
