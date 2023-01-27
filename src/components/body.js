@@ -5,12 +5,9 @@ import Studies from "./studies";
 import Work from "./work";
 
 
-class Body extends React.Component {
-    constructor(props){
-        super(props)
-    }
-
-    overview = () => {
+const Body =() => {
+    
+    const overview = () => {
         let inputs = document.querySelectorAll('input')
         inputs.forEach(element => {
             element.classList.toggle('preview')
@@ -18,21 +15,20 @@ class Body extends React.Component {
         let buttons = document.querySelectorAll('button')
         buttons.forEach(element =>
             element.classList.toggle('btn'))
-            console.log(buttons)
 
     }
 
-    render(){
+    
         return(
             <div className="body">
                 <Data />
                 <Studies />
                 <Work />
-                <p className="overview" onClick={this.overview}> Overview</p>
+                <p className="overview" onClick={overview}> Overview</p>
             </div>
         )
     }
         
-}
+
 
 export default Body

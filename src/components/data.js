@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import './components.css'
 
-class Data extends React.Component {
-    constructor(props){
+
+const Data = () => {
+    
+    const [state, setState] = useState({
+
+        name: 'Name',
+        surname: 'Surname',
+        position:'Position',
+        city: 'City',
+        phone:'Phone',
+        email:'Email',
+        page:'Page',
+    })
+    /* constructor(props){
         super(props)
         this.state={
             name: 'Name',
@@ -13,7 +25,7 @@ class Data extends React.Component {
             email:'Email',
             page:'Page',
         }
-    }
+    } */
 
     /* updateData = (e) => {
         let illo = e.target.id.toLowerCase()
@@ -26,19 +38,17 @@ class Data extends React.Component {
      */
     
 
-    dataFields () {
-            return Object.keys(this.state).map((obj, i) => {
+    const dataFields = () => {
+            return Object.keys(state).map((obj, i) => {
                 if(i>2){
                 return(
                     
-                        <input id={obj} key={i} type='text' placeholder={obj[0].toUpperCase() + obj.slice(1)}
-                        onChange={this.updateData} ></input>
+                        <input id={obj} key={i} type='text' placeholder={obj[0].toUpperCase() + obj.slice(1)}></input>
                         )
             }
             })
         }        
 
-    render(){
         return(
             <div className="data container">
                 <div className="top">
@@ -49,12 +59,11 @@ class Data extends React.Component {
                     <input type='text' placeholder='Position'></input>
                 </div>
                 <div className="details">
-                    {this.dataFields()}
+                    {dataFields()}
                 </div>
                 
             </div>
         )
-    }
 }
 
 export default Data
