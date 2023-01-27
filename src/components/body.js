@@ -15,7 +15,6 @@ const Body =() => {
         let buttons = document.querySelectorAll('button')
         buttons.forEach(element =>
             element.classList.toggle('btn'))
-            console.log(buttons)
 
     }
 
