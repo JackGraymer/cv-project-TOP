@@ -4,7 +4,7 @@
 
 --- 
 
-#### This project aims to use the basics concepts of react to create a form that will display a CV like result. Using react class components only. 
+#### This project aims to use the basics concepts of react to create a form that will display a CV like result. Using react function components and hooks only. 
 
 <h3><a href="#assignment" class="anchor-link">Assignment</a></h3>
 
